@@ -1,0 +1,25 @@
+:root{--qai-bg:#0c0d10;--qai-panel:rgba(18,19,23,.96);--qai-soft:rgba(255,255,255,.08);--qai-line:rgba(255,255,255,.12);--qai-text:#f7f7f5;--qai-muted:#a9abb3;--qai-accent:#d7ff45;--qai-shadow:0 24px 80px rgba(0,0,0,.36)}
+.queenie-ai{position:fixed;right:24px;bottom:24px;z-index:9998;font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--qai-text)}
+.queenie-ai *{box-sizing:border-box}
+.queenie-ai__launcher{width:58px;height:58px;border:0;border-radius:20px;background:var(--qai-text);color:#0b0b0d;box-shadow:0 14px 40px rgba(0,0,0,.25);display:grid;place-items:center;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+.queenie-ai__launcher:hover{transform:translateY(-2px);box-shadow:0 18px 48px rgba(0,0,0,.3)}
+.queenie-ai__launcher-mark{font-size:18px;font-weight:800;letter-spacing:-.04em}
+.queenie-ai__panel{position:absolute;right:0;bottom:72px;width:min(390px,calc(100vw - 32px));height:min(620px,calc(100vh - 120px));background:var(--qai-panel);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid var(--qai-line);border-radius:28px;box-shadow:var(--qai-shadow);overflow:hidden;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateY(14px) scale(.98);transform-origin:100% 100%;transition:opacity .2s ease,transform .2s ease}
+.queenie-ai.is-open .queenie-ai__panel{opacity:1;pointer-events:auto;transform:none}
+.queenie-ai__head{padding:18px 18px 14px;border-bottom:1px solid var(--qai-line);display:flex;align-items:center;gap:12px}
+.queenie-ai__avatar{width:38px;height:38px;border-radius:14px;background:var(--qai-accent);color:#111;display:grid;place-items:center;font-weight:900;font-size:14px}
+.queenie-ai__head-copy{min-width:0;flex:1}.queenie-ai__title{margin:0;font-size:15px;font-weight:760}.queenie-ai__status{margin:3px 0 0;font-size:11px;color:var(--qai-muted)}
+.queenie-ai__close{border:0;background:transparent;color:var(--qai-muted);font-size:24px;line-height:1;cursor:pointer;padding:4px 6px}
+.queenie-ai__messages{flex:1;overflow:auto;padding:18px 16px 12px;scroll-behavior:smooth}
+.queenie-ai__bubble{max-width:88%;padding:12px 14px;border-radius:18px;margin:0 0 10px;font-size:13px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+.queenie-ai__bubble--ai{background:var(--qai-soft);border:1px solid rgba(255,255,255,.06);border-bottom-left-radius:7px;color:var(--qai-text)}
+.queenie-ai__bubble--user{margin-left:auto;background:var(--qai-text);color:#111;border-bottom-right-radius:7px}
+.queenie-ai__quick{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 14px}.queenie-ai__quick button{border:1px solid var(--qai-line);background:transparent;color:var(--qai-text);border-radius:999px;padding:8px 10px;font:inherit;font-size:11px;cursor:pointer}
+.queenie-ai__quick button:hover{border-color:rgba(255,255,255,.32)}
+.queenie-ai__typing{display:inline-flex;gap:4px;align-items:center}.queenie-ai__typing i{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.45;animation:qai-dot 1s infinite ease-in-out}.queenie-ai__typing i:nth-child(2){animation-delay:.14s}.queenie-ai__typing i:nth-child(3){animation-delay:.28s}@keyframes qai-dot{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-3px);opacity:1}}
+.queenie-ai__form{padding:12px;border-top:1px solid var(--qai-line);display:flex;gap:8px;align-items:flex-end;background:rgba(12,13,16,.74)}
+.queenie-ai__input{flex:1;min-height:42px;max-height:96px;resize:none;border:1px solid var(--qai-line);border-radius:16px;background:rgba(255,255,255,.055);color:var(--qai-text);padding:11px 12px;font:inherit;font-size:13px;outline:none}.queenie-ai__input::placeholder{color:#7e818a}.queenie-ai__input:focus{border-color:rgba(215,255,69,.55)}
+.queenie-ai__send{width:42px;height:42px;flex:0 0 42px;border:0;border-radius:14px;background:var(--qai-accent);color:#0d0e10;font-size:18px;font-weight:800;cursor:pointer}.queenie-ai__send:disabled{opacity:.45;cursor:not-allowed}
+.queenie-ai__footnote{font-size:10px;color:#737780;padding:0 16px 12px;margin:0;background:rgba(12,13,16,.74)}
+@media(max-width:640px){.queenie-ai{right:14px;bottom:14px}.queenie-ai__launcher{width:54px;height:54px;border-radius:18px}.queenie-ai__panel{position:fixed;left:10px;right:10px;bottom:78px;width:auto;height:min(68vh,620px);border-radius:24px}}
+@media(prefers-reduced-motion:reduce){.queenie-ai__launcher,.queenie-ai__panel{transition:none}.queenie-ai__messages{scroll-behavior:auto}}
