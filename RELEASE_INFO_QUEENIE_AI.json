@@ -1,0 +1,15 @@
+{
+  "version": "20260919-queenie-ai-v1",
+  "baseRelease": "20260918-capabilities-r1",
+  "status": "development-preview",
+  "onlineProductionChanged": false,
+  "added": [
+    "css/queenie-ai.css",
+    "js/queenie-ai.js",
+    "data/queenie-ai-knowledge.json",
+    "functions/api/queenie-ai.js",
+    "QUEENIE_AI_SETUP.md"
+  ],
+  "modified": ["index.html","index-v2.html","ai-signal-saas.html"],
+  "notes": "Hybrid portfolio assistant: Qwen when configured, deterministic local knowledge fallback otherwise."
+}
